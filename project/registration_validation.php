@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 		}
 		else	
 		{
-			move_uploaded_file($_FILES['image']['tmp_name'], "/var/www/html/project/new/img/$img_var");
+			move_uploaded_file($_FILES['image']['tmp_name'], "/var/www/html/projects/assignment/project_form/project/img/$img_var");
 		}
 	}
 //validating first name

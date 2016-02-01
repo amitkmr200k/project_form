@@ -14,7 +14,7 @@ require("registration_validation.php")
 	<div class="container">
 		<div class="respnosive">
 			<!-- Form going to insert_data page-->
-			<form id="registration_form" action="registration.php" enctype="multipart/form-data" method="POST">
+			<form id="registration_form" action="registration.php" enctype="multipart/form-data" method="POST" >
 				
 				<div class="col-sm-4"><b>First name</b> <br/><input id="first_name" type="text" value="<?php echo "{$_POST['first_name']}";?>" name="first_name" placeholder="First Name"> 
 				</div>
@@ -118,10 +118,12 @@ require("registration_validation.php")
 				<div class="col-sm-4"><b>Write something(140 words)</b><br/><textarea name="comment" placeholder="Comment here in 140 words" rows="4" cols="30"></textarea></div>
 				<br/>	
 				<div class="col-sm-4"><input id="submit"  type="submit" value="Submit" name="submit" style="width:175px"></div>
-				<div class="col-sm-4"><input id="" type="file" value="image" name="image"  accept="image/x-png, image/gif, image/jpeg"></div>
+				<div class="col-sm-4">
+				<input id="image_input" type="file" value="image" name="image"  accept="image/x-png, image/gif, image/jpeg">
+				 <img id="image" src="" alt="image preview here" height="150" width="150" />				
+				</div>
 			</form>	
 		</div>
 	</div>
 </div>
-</form>
 <?php require("footer.html");?>
