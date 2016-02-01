@@ -1,23 +1,24 @@
 <?php
 session_start();
-require_once("go_to.php");
-require_once("validation_function.php");
-require_once("connection.php");
+require("go_to.php");
+require("validation_function.php");
+require("connection.php");
 require("header.php");
-?> 
-<?php
-$error=array();
 if(isset($_POST['submit']))
-{
+{	$error=array();
 	$user_name=trim($_POST['user_name']);
 	$password=trim($_POST['password']);
 	if(!value_present($user_name))
 	{
-		$error['user_name']="Username cannot be blank <br/>";
+		$error['user_name']="<b>Username</b> cannot be blank <br/>";
+	}
+	else if(!preg_match("/^[a-zA-Z0-9_@]*$/", $_POST['user_name']))
+	{	
+		$error['user_name']="Only charatcers,numbers, @ and underscore(_) allowed in <b>user name</b>";
 	}
 	if(!value_present($password))
 	{
-		$error['password']="Password cannot be blank <br/>";
+		$error['password']="<b>Password</b> cannot be blank <br/>";
 	}
 	//if no error found
 	if(empty($error))
@@ -29,8 +30,7 @@ if(isset($_POST['submit']))
 			if($password!=$row["password"])
 			{
 				echo "<center> Wrong password</center><br/>";
-				$user_name=$_POST['user_name'];
-				
+				$user_name=$_POST['user_name'];		
 			}
 			else if($password==$row["password"] && isset($row['activate']))
 			{
@@ -41,30 +41,31 @@ if(isset($_POST['submit']))
 				{
 					echo "<center> Account not activated </center>";
 				}
-				
-			}		
-			else
-			{
-				echo "<center> user does not exist</center> ";
-			}
-		}	
-	}
-	else
-	{
-		$user_name="";
-		$password="";
-	}
-	?>
+		}		
+		else
+		{
+			echo "<center> user does not exist</center> ";
+		}
+	}	
+}
+else
+{
+	$user_name="";
+	$password="";
+}
+?>
 	<center>
-		<?php echo form_error($error);
-echo "<br/>"; //function present in validation_function.php file
+		<?php echo form_error($error);//function present in validation_function.php file
+// for showing the errors client side		
+		echo "<p id='fix_error'></p><p id='user_name_error'></p><p id='password_error'></p> ";
+echo "<br/>"; 
 ?>
 <div class="align">
 	<form action="login.php" method="post">
-		Username : <input type="text" name="user_name" value="<?php echo $user_name;?>" /><br/><br/>
-		Password : <input type="password" name="password" value="" /><br/><br/>
+		Username : <input id="user_name_jq" type="text" name="user_name" value="<?php echo $user_name;?>" /><br/><br/>
+		Password : <input id="password_jq" type="password" name="password" value="" /><br/><br/>
 
-		<div class="move"><input type="submit" name="submit" value="Log In" style="width:100px"><br/><br/>
+		<div class="move"><input id = "login" type="submit" name="submit" value="Log In" style="width:100px"><br/><br/>
 		</div>
 	</form>
 </div>

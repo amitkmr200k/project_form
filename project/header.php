@@ -2,8 +2,11 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="css/info.css">
-	<link rel="stylesheet" href="css/class.css">
-	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/class.css">	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/registration_validation_jquery.js"></script>
+       <script type="text/javascript" src="js/login_validation_jquery.js"></script>  
+    <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<meta charset="utf-8">
