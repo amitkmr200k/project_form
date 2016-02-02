@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/image_preview.js"></script>
     <script type="text/javascript" src="js/registration_validation_jquery.js"></script>
     <script type="text/javascript" src="js/login_validation_jquery.js?version=123"></script>  
+    <script type="text/javascript" src="js/same_permanent.js?version=123"></script>  
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">

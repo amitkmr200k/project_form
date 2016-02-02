@@ -104,6 +104,10 @@ require("registration_validation.php")
 				<div>				
 					<div class="row">			
 						<div class="col-sm-4"><h4><strong>Permanent address</strong></h4></div>
+						<div class="col-sm-4">
+						<button id ="copy_residence" type="button">Same As Residence
+						</button>
+						</div>
 						<br/><br/><br/>
 						<div class="col-sm-4"><b>Street</b> <br/><input id="permanent_street" type="text" value="<?php echo "{$_POST['permanent_street']}";?>" name="permanent_street"></div>
 						<div class="col-sm-4"><b>City</b> <br/><input id="permanent_city" type="text" value="<?php echo "{$_POST['permanent_city']}";?>" name="permanent_city"></div>
