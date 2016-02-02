@@ -27,7 +27,8 @@ $(document).ready(function()
     		return false;	
     	}
     	else
-        {   
+        {  
+        // using ajax 
             $.ajax({
                 method: "POST",
                 url: "validate_login.php",
