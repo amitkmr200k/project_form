@@ -29,7 +29,7 @@ if(isset($_POST['submit']))
 	{
 		$error['first_name']="Only charatcers allowed in <b>first name</b>";
 	}
-//validating middle name	
+//validating middle name
 	if(!preg_match("/^[a-zA-Z .]*$/", $_POST['middle_name']))
 	{
 		$error['middle_name']="Only charatcers,dot and space allowed in <b>middle name</b>";
@@ -48,17 +48,17 @@ if(isset($_POST['submit']))
 	{	
 		$error['user_name']="Only charatcers,numbers and underscore(_) allowed in <b>user name</b>";
 	}
-	else
-	{	
-		$query="SELECT COUNT(*) AS user1 from user where user_name='{$_POST["user_name"]}'";
-		$result=mysqli_query($connection,$query);
-		$get_user_name=mysqli_fetch_assoc($result);
-		//mysqli_free_result($result);
-		if($get_user_name['user1']==1)
-		{
-			$error['user_name']="<b>User name</b> already exists,please choose a different user name";	
-		}	
-	}
+	// else
+	// {	
+	// 	$query="SELECT COUNT(*) AS user1 from user where user_name='{$_POST["user_name"]}'";
+	// 	$result=mysqli_query($connection,$query);
+	// 	$get_user_name=mysqli_fetch_assoc($result);
+	// 	//mysqli_free_result($result);
+	// 	if($get_user_name['user1']==1)
+	// 	{
+	// 		$error['user_name']="<b>User name</b> already exists,please choose a different user name";	
+	// 	}	
+	// }
 //validating email id
 	if(!value_present($_POST['email_id']))
 	{
@@ -67,17 +67,6 @@ if(isset($_POST['submit']))
 	else if (!filter_var($_POST['email_id'], FILTER_VALIDATE_EMAIL)) 
 	{
 		$error['email_id'] = "Please enter a valid <b>email</b>"; 
-	}	
-	else
-	{
-		$query="SELECT COUNT(*) AS email from user where email_id='{$_POST["email_id"]}'";
-		$result=mysqli_query($connection,$query);
-		$get_email_id=mysqli_fetch_assoc($result);
-		//mysqli_free_result($result);
-		if($get_email_id['email']==1)
-		{
-			$error['email_id']="<b>Email Id</b> already exists,please enter a different email id";	
-		}		
 	}	
 //validating password
 	if(!value_present($_POST['password']))
@@ -234,7 +223,6 @@ if(isset($_POST['submit']))
 	{	
 		$error['permanent_fax_no']="Only digits(10) allowed in <b>Fax Number(permanent)</b>";
 	}
-
 //if no error found insert the data
 	if(empty($error))
 	{

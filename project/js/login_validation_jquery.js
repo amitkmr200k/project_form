@@ -39,13 +39,13 @@ $(document).ready(function()
                 },
                 success: function( msg ) 
                 {
-                    if(msg.login=="correct")
+                    if(msg.login == "correct")
                     {
                         window.location.replace("home.php");
                     }  
                     else
                     {   
-                       if(msg.activate!="")
+                       if(msg.activate!= "")
                             $("#activate_error").text(msg.activate).css("font-size","100%").css("color","red");
                         else
                         {
