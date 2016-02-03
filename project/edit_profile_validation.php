@@ -44,15 +44,6 @@ if(isset($_POST['submit']))
 	if(!preg_match("/^[a-zA-Z .]*$/", $_POST['last_name']))
 	{
 		$error['last_name']="Only charatcers, dot and spaces allowed in <b>last name</b>";
-	}
-//validating user name
-	if(!value_present($_POST['user_name']))
-	{
-		$error['user_name']="<b>User name</b> cannot be blank";
-	}
-	else if(!preg_match("/^[a-zA-Z0-9_]*$/", $_POST['user_name']))
-	{	
-		$error['user_name']="Only charatcers,numbers and underscore(_) allowed in <b>user name</b>";
 	}	
 //validating email id
 	if(!value_present($_POST['email_id']))
@@ -210,8 +201,7 @@ if(isset($_POST['submit']))
 		$query.="first_name='{$_POST["first_name"]}', ";
 		$query.="middle_name='{$_POST["middle_name"]}', ";
 		$query.="last_name='{$_POST["last_name"]}', ";
-		$query.="email_id='{$_POST["email_id"]}', ";
-		$query.="user_name='{$_POST["user_name"]}', ";	
+		$query.="email_id='{$_POST["email_id"]}', ";	
 		$query.="gender='{$_POST["gender"]}', ";
 		$query.="age='{$_POST["age"]}', ";
 		$query.="dob='{$_POST["dob"]}', ";

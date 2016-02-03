@@ -127,7 +127,6 @@ require("registration_validation.php")
 				</div>
 				<div class="row">
 					<div class="col-sm-4"><b>Write something(140 words)</b><br/><textarea name="comment" placeholder="Comment here in 140 words" rows="4" cols="30"></textarea></div>
-					<br/>	
 					<div class="col-sm-4"><input id="submit"  type="submit" value="Submit" name="submit" style="width:175px"></div>
 					<div class="col-sm-4">
 						<input id="image_input" type="file" value="image" name="image"  accept="image/x-png, image/gif, image/jpeg">
