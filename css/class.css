@@ -1,0 +1,17 @@
+.form{
+	background-color:lightgrey;
+	padding:20px;
+	margin-left: 90px;
+	margin-right: 90px;
+}
+
+.reset_form{
+	padding-left : 500px; 
+}
+
+.error{
+	color:red;
+	font-size: 15px;
+}
+
+
