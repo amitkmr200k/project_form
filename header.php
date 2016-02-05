@@ -4,6 +4,10 @@
 	<link rel="stylesheet" href="css/info.css">
 	<link rel="stylesheet" href="css/class.css">	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!-- jqgrid theme start-->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/jqgrid_theme/theme.css' />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/ui.jqgrid.css" />
+    <!-- jqgrid theme end -->
     <script type="text/javascript" src="js/image_preview.js"></script>
     <script type="text/javascript" src="js/edit_profile_validation.js?version=126"></script>
     <script type="text/javascript" src="js/registration_validation_jquery.js"></script>
