@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 		}
 		else	
 		{
-			move_uploaded_file($_FILES['image']['tmp_name'], "/var/www/html/projects/assignment/project_form/project/img/$img_var");
+			move_uploaded_file($_FILES['image']['tmp_name'], "/var/www/html/projects/assignment/project_form/img/$img_var");
 		}
 	}
 //validating first name
@@ -48,17 +48,7 @@ if(isset($_POST['submit']))
 	{	
 		$error['user_name']="Only charatcers,numbers and underscore(_) allowed in <b>user name</b>";
 	}
-	// else
-	// {	
-	// 	$query="SELECT COUNT(*) AS user1 from user where user_name='{$_POST["user_name"]}'";
-	// 	$result=mysqli_query($connection,$query);
-	// 	$get_user_name=mysqli_fetch_assoc($result);
-	// 	//mysqli_free_result($result);
-	// 	if($get_user_name['user1']==1)
-	// 	{
-	// 		$error['user_name']="<b>User name</b> already exists,please choose a different user name";	
-	// 	}	
-	// }
+
 //validating email id
 	if(!value_present($_POST['email_id']))
 	{

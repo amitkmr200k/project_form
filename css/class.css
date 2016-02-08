@@ -1,38 +1,38 @@
 .form
 {
-	background-color:lightgrey;
-	padding:20px;
-	margin-left: 90px;
-	margin-right: 90px;
+    background-color: lightgrey;
+    padding: 20px;
+    margin-left: 90px;
+    margin-right: 90px;
 }
 
 .form_password
 {
-	background-color: #CAE1FF;
-	border: 1px solid black;
-	padding:20px;
-	margin: 2%;
-	margin-left: 35%;
-	margin-right: 35%;
+    background-color: #CAE1FF;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 2%;
+    margin-left: 35%;
+    margin-right: 35%;
 }
 
 .admin
 {
-	padding:20px;
-	margin-left: 10%;
+    padding: 20px;
+    margin-left: 10%;
 }
 .reset_form
 {
-	padding-left : 500px; 
+    padding-left: 500px; 
 }
 
 .error
 {
-	color:red;
-	font-size: 15px;
+    color: red;
+    font-size: 15px;
 }
 
 .error_login
 {
-	margin-left: 9%;
+    margin-left: 9%;
 }
