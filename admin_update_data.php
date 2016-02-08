@@ -8,7 +8,6 @@ if('del'==$update_type)
 	$query="DELETE FROM user WHERE id='$id'";
 	$result=mysqli_query($connection,$query);
 }
-
 else if('edit'==$update_type)
 {
     //$query="UPDATE SET ";

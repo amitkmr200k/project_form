@@ -1,26 +1,38 @@
-.form{
+.form
+{
 	background-color:lightgrey;
 	padding:20px;
 	margin-left: 90px;
 	margin-right: 90px;
 }
 
-.reset_form{
+.form_password
+{
+	background-color: #CAE1FF;
+	border: 1px solid black;
+	padding:20px;
+	margin: 2%;
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
+.admin
+{
+	padding:20px;
+	margin-left: 10%;
+}
+.reset_form
+{
 	padding-left : 500px; 
 }
 
-.error{
+.error
+{
 	color:red;
 	font-size: 15px;
 }
-.form_password{
-	background-color:lightgrey;
-	padding:20px;
-	margin: 2%;
-	margin-left: 30%;
-	margin-right: 40%;
-}
 
-.error_login{
+.error_login
+{
 	margin-left: 9%;
 }
