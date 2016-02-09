@@ -36,3 +36,12 @@
 {
     margin-left: 9%;
 }
+
+.form_admin_privilege,.admin_record_manipulation
+{
+    display: block;
+    padding: 2%;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: 2px solid black;
+}

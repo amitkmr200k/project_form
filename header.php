@@ -7,7 +7,7 @@ function login()
         {
             echo "
             <li>
-                <a href='home.php'><h1>Profile</h1></a>
+                <a href='admin_record_manipulation.php'><h1>ASSIGN</h1></a>
             </li>
             <li>
                 <a href='admin_section.php'><h1>User Data</h1></a>
