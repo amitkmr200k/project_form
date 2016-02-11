@@ -37,11 +37,27 @@
     margin-left: 9%;
 }
 
-.form_admin_privilege,.admin_record_manipulation
+.admin_record_manipulation
 {
     display: block;
     padding: 2%;
     margin-left: 30%;
     margin-right: 30%;
     border: 2px solid black;
+}
+.form_admin_privilege
+{
+    padding: 2%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.privilege_display
+{
+    font-size: 120%;
+    text-transform: capitalize;
+}
+
+.jumbotron_admin_privilege
+{
+   background-size: 2px 1px;
 }

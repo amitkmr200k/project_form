@@ -3,7 +3,7 @@ class data_manipulation
 {
    public static function get_data($table_name,$type)
    {
-    require('connection.php');
+    require('connection_pdo.php');
     $display = array();
     
     try
@@ -33,7 +33,7 @@ public static function add_data($table_name,$type,$role_type)
 {   
     if (trim($role_type) != "")
     {
-        require('connection.php');
+        require('connection_pdo.php');
         $query = "INSERT INTO  {$table_name}({$type}) VALUES ('{$role_type}')";
         $result = $conn->prepare($query);
         $result -> execute();
@@ -42,7 +42,7 @@ public static function add_data($table_name,$type,$role_type)
 
 public static function delete_data($table_name,$type,$role_type)
 {
-    require('connection.php');
+    require('connection_pdo.php');
     $query = "DELETE FROM {$table_name} WHERE {$type} = '$role_type'";
     $result = $conn->prepare($query);
     $result -> execute();
@@ -50,7 +50,7 @@ public static function delete_data($table_name,$type,$role_type)
 
 public static function privilege_data()
 {
-    require('connection.php');
+    require('connection_pdo.php');
     $display = array();
     $query = "SELECT * FROM manage_privilege";
     $result = $conn->prepare($query);
