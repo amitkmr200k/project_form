@@ -37,7 +37,7 @@ $(document).ready(function () {
             height: 'auto',
             viewrecords: true,
             gridview: true,
-            caption: 'User Data',
+            caption: 'User Information',
             gridComplete: function(){
               $('#grid').navGrid('#perpage', { edit: true, add: false, del: true, 
                 search: true, refresh: true, view: false, position: 'left', cloneToTop: true }); 

@@ -1,20 +1,26 @@
 <?php
-require('isset_session.php');
-$_SESSION['admin'] = "yes";
+// require('isset_session.php');
+// $_SESSION['admin'] = "yes";
 require('header.php');
 require('acl_class.php');
 require('add_delete_record.php');
 
-$get_data_role_table = $acl->get_data('role','role');
-$get_data_action_table = $acl->get_data('action','operation');
-$get_data_resource_table = $acl->get_data('resource','resource');
+function display_data($table_name,$type)
+{   
+    $acl = new data_manipulation();
+    $get = $acl->get_data($table_name,$type);
+    foreach ($get as $key => $value) 
+    {   $val =$value[$type];
+        echo "<option value='{$val}'>{$val}</option>";
+    }
+}
 ?>
 <div class='container'>
 <div class='admin_record_manipulation'>
     <h4>Roles </h4>
     <form class='form-inline' action='admin_record_manipulation.php' method='post'>
        <select name='role'>
-            <?php echo $get_data_role_table ;?>       
+            <?php display_data('role','role') ;?>       
         </select>
         <input type='text' name='role_type' value=''>
         <input type='submit' name='add_role' value='Add'>
@@ -24,7 +30,7 @@ $get_data_resource_table = $acl->get_data('resource','resource');
     <h4>Action</h4>
     <form class='form-inline' action='admin_record_manipulation.php' method='post'>
         <select name='action'>
-            <?php echo $get_data_action_table ;?>       
+            <?php display_data('action','operation') ;?>       
         </select>
         <input type='text' name='action_type' value=''>
         <input type='submit' name='add_action' value='Add'>
@@ -34,7 +40,7 @@ $get_data_resource_table = $acl->get_data('resource','resource');
     <h4>Resource </h4>
     <form action='admin_record_manipulation.php' method='post'>
         <select name='resource'>
-            <?php echo $get_data_resource_table ;?>       
+            <?php display_data('resource','resource') ;?>       
         </select>
         <input type='text' name='resource_type' value=''>
         <input type='submit' name='add_resource' value='Add'>
