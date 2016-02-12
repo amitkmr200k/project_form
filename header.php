@@ -7,13 +7,19 @@ function login()
         {
             echo "
             <li>
-                <a href='admin_record_manipulation.php'><h1>ASSIGN</h1></a>
+                <a href='admin_assign_role.php'><h2>Assign</h2></a>
             </li>
             <li>
-                <a href='admin_section.php'><h1>User Data</h1></a>
+                <a href='admin_privilege.php'><h2>Privileges</h2></a>
             </li>
             <li>
-                <a href='logout.php'><h1>Log Out </h1>  </a>
+                <a href='admin_record_manipulation.php'><h2>Edit</h2></a>
+            </li>
+            <li>
+                <a href='admin_section.php'><h2>User Data</h2></a>
+            </li>
+            <li>
+                <a href='logout.php'><h2>Log Out </h2></a>
             </li>
             
             ";

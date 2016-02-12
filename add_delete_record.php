@@ -3,6 +3,7 @@ error_reporting(-1);
 ini_set('display_errors', 'On');
 
 $acl = new data_manipulation();
+
 // for role
 if (isset($_POST['add_role']))
 {
