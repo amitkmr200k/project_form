@@ -8,7 +8,7 @@ $_SESSION['admin'] = 'yes';
 function display_data($table_name, $type)
 {
     $acl = new data_manipulation();
-    $get = $acl->get_data($table_name, $type);
+    $get = $acl->get_data($table_name);
 
     foreach ($get as $key => $value)
     {
@@ -25,7 +25,7 @@ function display_data($table_name, $type)
     <h4>Roles </h4>
     <form class='form-inline' action='admin_record_manipulation.php' method='post'>
        <select name='role'>
-            <?php display_data('role', 'role'); ?>       
+            <?php display_data('role', 'role'); ?>
         </select>
         <input type='text' name='role_type' value=''>
         <input type='submit' name='add_role' value='Add'>

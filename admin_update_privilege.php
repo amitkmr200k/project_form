@@ -1,7 +1,5 @@
 <?php
-require_once('acl_class.php');
-//require('connection_pdo.php');
-//require('connection.php');
+require_once 'acl_class.php';
 
 if(isset($_POST['role_id']))
 {

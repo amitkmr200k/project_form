@@ -16,7 +16,7 @@ class data_manipulation
             echo "error <br />";
         }
 
-        foreach ($result->fetchAll() as $row) 
+        foreach ($result->fetchAll(PDO::FETCH_ASSOC) as $row) 
         {
             $display[] = $row;
         }
@@ -56,7 +56,7 @@ public static function privilege_data()
     $result = $conn->prepare($query);
     $result -> execute();
 
-    foreach ($result->fetchAll() as $row) 
+    foreach ($result->fetchAll(PDO::FETCH_ASSOC) as $row) 
     {
         $display[] = $row;
     }
