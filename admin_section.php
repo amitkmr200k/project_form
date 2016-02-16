@@ -1,6 +1,5 @@
 <?php 
-require('isset_session.php');
-$_SESSION['admin']="yes";
+require_once 'is_admin.php';
 require('header.php');
 ?>
 

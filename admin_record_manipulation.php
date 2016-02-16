@@ -1,9 +1,8 @@
 <?php
-require 'isset_session.php';
+require_once 'is_admin.php';
 require 'header.php';
 require 'acl_class.php';
 require 'add_delete_record.php';
-$_SESSION['admin'] = 'yes';
 
 function display_data($table_name, $type)
 {

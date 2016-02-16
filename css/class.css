@@ -61,11 +61,18 @@
 {
    background-size: 2px 1px;
 }
+
 .admin_assign_role_user_info
 {
     padding:1%;
     margin: 1%;
-    margin-left: 30%;
+    margin-left: 33%;
     margin-right: 20%;
-    border: 1px solid black;
+}
+
+.assignment
+{
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
 }

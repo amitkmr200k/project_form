@@ -1,20 +1,31 @@
 <?php
 require_once 'connection_pdo.php';
 
+function get_id($string,$slice_it)
+{
+    $length          = strlen($string);
+    $length_of_slice = strlen($slice_it);
+    $id_pos          = strpos($string,$slice_it);
+    $new_string         = (int) substr($string, $id_pos+$length_of_slice, $length-$id_pos-$length_of_slice);
+
+    return $new_string;
+}
+
 if(isset($_POST['user']) && isset($_POST['role']))
 {
-    $user    = $_POST['user'];
-    $role_id = $_POST['role'];
-    $length  = strlen($role_id);
-    $id_pos  = strpos($role_id,'role_');
-    $role_id = (int) substr($role_id,$id_pos+5,$length-$id_pos-5);
-
-
+    $user_id    = get_id($_POST['user'],'user_name_');
+    $role_id = get_id($_POST['role'],'role_');
     $query   = "UPDATE user
                 SET role_id = '{$role_id}'
-                WHERE user_name = '{$user}'";
+                WHERE id = '{$user_id}'";
     $result  = $conn->prepare($query);
     $result -> execute();
+     $message['not_selected'] = 'false';
 }
+else
+{
+    $message['not_selected'] = 'true';
+}
+echo json_encode($message);
 
 ?>

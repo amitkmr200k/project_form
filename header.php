@@ -33,6 +33,9 @@ function login()
             <li>
                 <a href='edit_profile.php'><h1>Edit Profile</h1></a>
             </li>
+             <li>
+                <a href='assignment_view.php'><h1>Assignment</h1></a>
+            </li>
             <li>
                 <a href='logout.php'><h1>Log Out </h1>  </a>
             </li> 
