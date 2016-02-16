@@ -2,6 +2,7 @@
 session_start();
 require 'validation_function.php';
 require 'connection.php';
+require 'acl_class_authentication.php';
 $message   = array();
 $user_name = trim($_POST['user_name']);
 $password  = trim($_POST['password']);
@@ -36,9 +37,13 @@ if(empty($message))
 
         if($password==$row["password"] && isset($row['activate']))
         {
-            // decalring session id which is used to track user information
+            // Decalring session id which is used to track user information.
             $_SESSION['id'] = $row['id'];
             $_SESSION['role_id'] = $row['role_id'];
+            
+            $acl = new authenticate();
+            // Storing action ids and resource ids of the current user.
+            $_SESSION['data'] = $acl->privilege_assigned($row['role_id']);
             $message['login'] = 'correct';
             
             if(0==$row['admin'])
