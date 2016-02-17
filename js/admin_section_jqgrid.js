@@ -8,7 +8,7 @@ $(document).ready(function () {
         'User Id','User Name','First Name', 'Middle Name','Last Name','Age',
         'Gender','Date of Birth','marital_status','employed','employer',
         'residence_street','residence_city','residence_state',
-        'residence_pincode','residence_contact_no','residence_fax_no'
+        'residence_pincode','residence_contact_no','residence_fax_no','Tweets'
         ],
         colModel: [
         { name: 'id',width:30,editable:true},
@@ -27,21 +27,72 @@ $(document).ready(function () {
         { name: 'residence_state',width:60,editable:true},
         { name: 'residence_pincode',width:60,editable:true},
         { name: 'residence_contact_no',width:60,editable:true},
-        { name: 'residence_fax_no',width:60,editable:true}  
-            ],  
-            pager: '#perpage',
-            rowNum: 10,
-            rowList: [10,20],
-            sortname: 'id',
-            sortorder: 'asc',
-            height: 'auto',
-            viewrecords: true,
-            gridview: true,
-            caption: 'User Information',
-            gridComplete: function(){
-              $('#grid').navGrid('#perpage', { edit: true, add: false, del: true, 
+        { name: 'residence_fax_no',width:60,editable:true},
+        {name:'act',index:'act', width:60,sortable:false} 
+        ],  
+        pager: '#perpage',
+        rowNum: 10,
+        rowList: [10,20],
+        sortname: 'id',
+        sortorder: 'asc',
+        height: 'auto',
+        viewrecords: true,
+        gridview: true,
+        caption: 'User Information',
+        gridComplete: function(){
+
+            var ids = $("#grid").jqGrid('getDataIDs');
+            for(var i=0;i < ids.length;i++){
+                var cl = ids[i];
+                be = '<input id ="tweet" type="button" onclick="a()" class="btn btn-primary" data-toggle="modal"  value="View" />'; 
+                $("#grid").jqGrid('setRowData',ids[i],{act:be});
+            }
+            $('#grid').navGrid('#perpage', { edit: true, add: false, del: true, 
                 search: true, refresh: true, view: false, position: 'left', cloneToTop: true }); 
-          },
-          editurl: 'admin_update_data.php',
-      });
+        },
+        editurl: 'admin_update_data.php'
+    });
 });
+
+function a()
+{
+    $(document).ready(function(){
+
+        var id = $("#grid").jqGrid('getGridParam','selrow');
+        if (id) 
+        {
+            var ret = $("#grid").jqGrid('getRowData',id);
+            
+            user_name = ret.user_name;
+            
+            console.log('hi1');
+            
+            $.ajax({
+
+                //console.log('hi2');
+
+                method: "POST",
+                url: "twitter.php",
+                dataType: 'json',
+               // cache: false,
+                data: {
+                    user_name: user_name 
+                },
+                success: function( msg ) 
+                {
+                    $('#modal_content').html(msg.tweet);
+                    $('#myModal').modal('show');
+                },
+                error: function()
+                {
+                    console.log('fail');
+                }
+
+            });
+        } 
+        else
+        { 
+            alert("Please select row");
+        }
+    });
+}
