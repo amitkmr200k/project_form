@@ -31,7 +31,7 @@ if ($allow == 1)
     // Displaying allowed actions on th view page.
         foreach ($_SESSION['data'] AS $value) 
         {
-            if ($value['resource_id'] == $current_resource_id)
+            if ($value['resource_id'] == $current_resource_id )
             {
                 $action_id_allowed[] = $value['action_id'];
             }
