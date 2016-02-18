@@ -23,8 +23,8 @@ function display_role()
     {
         $val      = $value['role'];
         $id       = 'role'.$value['id'];
-        $display .= "<option class='privilege_display' id='$id' 
-        name='{$val}' value='{$val}'>{$val}</option>";
+        $display .= '<option class="privilege_display" id="'.$id.'" 
+        name="'.$val.'" value="'.$val.'">'.$val.'</option>';
     }
 
     return $display;
@@ -45,14 +45,14 @@ function display_resource_action()
     $get_resource   = display_data('resource');
     $display        = '';
     $count_resource = 0;
-    $count_action   = 0;    
+    $count_action   = 0;
     foreach ($get_resource as $value)
     {
         $count_resource++;
         $val      = $value['resource'];
         $id       = 'resource'.$value['id'];
-        $display .= "<tr><td class='privilege_display'><label id='{$id}'
-        name='{$val}'>{$val}</label>&nbsp&nbsp</td> ";
+        $display .= '<tr><td class="privilege_display"><label id="'.$id.'"
+        name="'.$val.'">'.$val.'</label>&nbsp&nbsp</td>';
         // Getting action table data.
         $get_action = get_action();
         
@@ -61,23 +61,16 @@ function display_resource_action()
             $count_action++;
             $val_action = $value_action['operation'];
             $id_action  = $id.'action'.$value_action['id'];
-            $display   .= "<td class='privilege_display'>
-            <input id='{$id_action}' type='checkbox' name='{$val_action}' value='{$val_action}'>
-            &nbsp{$val_action} &nbsp&nbsp </td> ";
-        }
-
-        if ($count_action >= 2)
-        {
-            $display   .= "<td class='privilege_display'>
-            <input id='all_{$id}' type='checkbox' name='all' value='all_{$id}'>
-            &nbsp all &nbsp&nbsp </td> ";
+            $display   .= '<td class="privilege_display">
+            <input id="'.$id_action.'" type="checkbox" name="'.$val_action.'" value="'.$val_action.'">
+            &nbsp'.$val_action.' &nbsp&nbsp </td> ';
         }
 
         $display .= '<br/> </tr>';
     }//end foreach
         $count_action /= 2;
-        $display   .= "<input id='count_action' type='hidden' name='count_action' value='{$count_action}'>";
-        $display   .= "<input id='count_resource' type='hidden' name='count_resource' value='{$count_resource}'>";
+        $display      .= "<input id='count_action' type='hidden' name='count_action' value='{$count_action}'>";
+        $display      .= "<input id='count_resource' type='hidden' name='count_resource' value='{$count_resource}'>";
 
     return $display;
 

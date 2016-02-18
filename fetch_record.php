@@ -1,5 +1,5 @@
 <?php
-require("connection.php");
+require 'connection.php';
 
 // fetching record 
 $query="SELECT * from user WHERE id ='{$_SESSION[id]}' ";

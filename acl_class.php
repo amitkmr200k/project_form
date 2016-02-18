@@ -10,7 +10,7 @@ class data_manipulation
 
         try
         {
-            $query  = "SELECT * FROM $table_name";
+            $query  = "SELECT * FROM {$table_name}";
             $result = $conn->prepare($query);
             $result->execute();
             if (!$result)
@@ -35,7 +35,7 @@ class data_manipulation
 
     public static function add_data($table_name, $type, $role_type)
     {
-        if (trim($role_type) != '')
+        if (trim($role_type) !== '')
         {
             require 'connection_pdo.php';
             $query  = "INSERT INTO  {$table_name}({$type}) VALUES ('{$role_type}')";
