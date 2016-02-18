@@ -1,4 +1,14 @@
 $(document).ready(function(){
+	 //on pressing enter submit the form
+    $('#edit_profile_form').keypress(function(e)
+    {
+        var key = e.which;
+        
+        if (key == 13)
+        {
+            $("#edit").click();
+        }
+    });
 //checking for unique email id 		
 $("#email_id_ed").blur(function()
 {

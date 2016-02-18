@@ -4,7 +4,7 @@ require('header.php');
 ?>
 <div class='form_password'>
 	<h4 class='error_login' id='activate_error'></h4> 
-	<form method='POST'>
+	<form id="login_form" method='POST'>
 		<div class='row'>
 			<div class='col-sm-1'></div>
 			<div class='col-sm-3'><label>Username</label> </div> 

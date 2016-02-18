@@ -64,5 +64,15 @@ $(document).ready(function()
                 }
             });
         }
-    }); 
+    });
+    
+    $('#login_form').keypress(function(e)
+    {
+        var key = e.which;
+        
+        if (key == 13)
+        {
+            $("#login").click();
+        }
+    });
 });

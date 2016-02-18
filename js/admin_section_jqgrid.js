@@ -46,9 +46,8 @@ $(document).ready(function () {
 
             for (var i = 0; i < ids_length; i++)
             {
-                var cl = ids[i];
-                be     = '<input id ="tweet" type="button" onclick="modal()" class="btn btn-primary" data-toggle="modal"  value="View" />';
-                $('#grid').jqGrid('setRowData', ids[i], {act: be});
+                view_tweet = '<input id ="tweet" type="button" onclick="modal()" class="btn btn-primary" data-toggle="modal"  value="View" />';
+                $('#grid').jqGrid('setRowData', ids[i], {act: view_tweet});
             }
 
             $('#grid').navGrid('#perpage', { edit: true, add: false, del: true,
@@ -92,4 +91,4 @@ function modal()
             alert('Please select row');
         }//end if
     });
-}
+}//end modal()

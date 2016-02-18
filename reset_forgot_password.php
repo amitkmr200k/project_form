@@ -66,7 +66,7 @@ else if( isset($_POST['submit']) && ('' == $_SESSION['email_id']))
     <h3> Reset Password</h3>
 </div>
 <div class="well reset_forgot_password">
-    <form id =reset_form action="reset_password_test.php" method="POST">
+    <form id =reset_form action="reset_forgot_password.php" method="POST">
         <div class='row error'>
         <center><?php echo $message; ?></center>
         </div>

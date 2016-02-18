@@ -47,7 +47,7 @@ function display_message()
 <div class="form">
     <div class="container">
         <div class="respnosive">
-            <form action="edit_profile.php" enctype="multipart/form-data" method="POST">
+            <form id="edit_profile_form" action="edit_profile.php" enctype="multipart/form-data" method="POST">
                 <div class="row">
                     <!--user details-->	
                     <div class="col-sm-4"><b>First name</b><br/><input id="first_name" type="text" 

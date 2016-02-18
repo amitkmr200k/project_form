@@ -1,4 +1,15 @@
 $(document).ready(function(){
+    //on pressing enter submit the form
+    $('#registration_form').keypress(function(e)
+    {
+        var key = e.which;
+        
+        if (key == 13)
+        {
+            $("#submit").click();
+        }
+    });
+
 // checking for unique email id 		
 $("#email_id").blur(function()
 {
